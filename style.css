@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Black.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'JetBrains Mono', sans-serif;
+    background-color: #E6F0FA; /* Светло-голубой фон */
+    color: #1F1F2E; /* Тёмно-синий цвет для текста */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание контейнера сверху */
+    height: 100vh;
+    padding-top: 30px; /* Отступ сверху для пространства */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFFFFF; /* Белый фон контейнера */
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Лёгкая тень для объёма */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #3A8DFF; /* Ярко-голубой цвет заголовка */
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #3A8DFF; /* Ярко-голубой цвет заголовка */
+    margin-bottom: 30px;
+    margin-top: -30px; /* Приподнимает элемент вверх на 30px */
+}
+
+.command-block {
+    font-family: 'JetBrains Mono';
+    margin-bottom: 30px;
+    background-color: #F0F4FA; /* Светло-серый с голубым оттенком фон блоков */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    position: relative;
+}
+
+.command-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.command {
+    font-family: 'JetBrains Mono';
+    font-size: 1.2rem;
+    color: #0077FF; /* Насыщенно-голубой для команд */
+}
+
+.toggle-btn {
+    font-family: 'JetBrains Mono';
+    padding: 10px 20px;
+    background-color: #0077FF; /* Ярко-голубая кнопка */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #005FCC; /* Темнее при наведении */
+}
+
+.info-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background-color: #DDE9F2; /* Более тёмный голубой для раскрывающегося блока */
+    padding: 0 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.info-panel p {
+    margin: 15px 0;
+    color: #004F8D; /* Тёмно-синий цвет текста в раскрывающемся блоке */
+    font-size: 1.2rem;
+}
+
+.info-panel.active {
+    max-height: 300px; /* Максимальная высота для плавного разворачивания */
+}
