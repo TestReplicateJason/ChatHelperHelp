@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chat Helper</h1>
+        <h2>Список команд</h2>
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">/help</p>
+                <button class="toggle-btn" onclick="togglePanel('help-panel')">Подробнее</button>
+            </div>
+            <div id="help-panel" class="info-panel">
+                <p>Выводит данный сайт с командами</p>
+            </div>
+        </div>
+
+        <!-- Блок команды .type -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">type</p>
+                <button class="toggle-btn" onclick="togglePanel('type-panel')">Подробнее</button>
+            </div>
+            <div id="type-panel" class="info-panel">
+                <p>Пишет красивым текстом текст <br/>Примиер [.]type текст, где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">info</p>
+                <button class="toggle-btn" onclick="togglePanel('inform-panel')">Подробнее</button>
+            </div>
+            <div id="inform-panel" class="info-panel">
+                <p>Выводит список информации о версии<br/>Пример [.]info, где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">tr</p>
+                <button class="toggle-btn" onclick="togglePanel('tr-panel')">Подробнее</button>
+            </div>
+            <div id="tr-panel" class="info-panel">
+                <p>Переводчик<br/>Пример (с ответом на сообщение!)<br/>[.]tr [язык_назначения], где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">webshot</p>
+                <button class="toggle-btn" onclick="togglePanel('webshot-panel')">Подробнее</button>
+            </div>
+            <div id="webshot-panel" class="info-panel">
+                <p>Скриншот с ссылки<br/>Пример [.]webshot (с ответом на сообщение с ссылкой!)<br/> или [.]webshot ссылка, где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">swap</p>
+                <button class="toggle-btn" onclick="togglePanel('swap-panel')">Подробнее</button>
+            </div>
+            <div id="swap-panel" class="info-panel">
+                <p>Меняет раскладку в тексте<br/>Пример [.]swap (с ответом на сообщение)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">restart</p>
+                <button class="toggle-btn" onclick="togglePanel('restart-panel')">Подробнее</button>
+            </div>
+            <div id="restart-panel" class="info-panel">
+                <p>Перезапустить если бот начинает плохо работать<br/>Пример [.]restart<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">ping</p>
+                <button class="toggle-btn" onclick="togglePanel('ping-panel')">Подробнее</button>
+            </div>
+            <div id="ping-panel" class="info-panel">
+                <p>Узнать скорость соеденения с TelegramAPI<br/>Пример [.]ping<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">speed</p>
+                <button class="toggle-btn" onclick="togglePanel('speed-panel')">Подробнее</button>
+            </div>
+            <div id="speed-panel" class="info-panel">
+                <p>Узнать скорость своего инета<br/>Пример [.]speed<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">srch</p>
+                <button class="toggle-btn" onclick="togglePanel('srch-panel')">Подробнее</button>
+            </div>
+            <div id="srch-panel" class="info-panel">
+                <p>Статистика сообщений в чате<br/>Пример [.]srch<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">mute</p>
+                <button class="toggle-btn" onclick="togglePanel('mute-panel')">Подробнее</button>
+            </div>
+            <div id="mute-panel" class="info-panel">
+                <p>Замутить<br/>Пример [.]mute (1s|1m|1h|1d|1w|1mon|1y) (с ответом!)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">unmute</p>
+                <button class="toggle-btn" onclick="togglePanel('unmute-panel')">Подробнее</button>
+            </div>
+            <div id="unmute-panel" class="info-panel">
+                <p>Размутить<br/>Пример [.]unmute (с ответом!)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">code</p>
+                <button class="toggle-btn" onclick="togglePanel('code-panel')">Подробнее</button>
+            </div>
+            <div id="code-panel" class="info-panel">
+                <p>Закодировать текст в 2 запись<br/>Пример [.]code текст<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">decode</p>
+                <button class="toggle-btn" onclick="togglePanel('decode-panel')">Подробнее</button>
+            </div>
+            <div id="decode-panel" class="info-panel">
+                <p>Декодировать текст из 2 записи<br/>Пример [.]decode текст в 2 записи<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">sf</p>
+                <button class="toggle-btn" onclick="togglePanel('sf-panel')">Подробнее</button>
+            </div>
+            <div id="sf-panel" class="info-panel">
+                <p>Найти первое сообщение (баги)<br/>Пример [.]sf id аккаунта<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">searchm</p>
+                <button class="toggle-btn" onclick="togglePanel('searchm-panel')">Подробнее</button>
+            </div>
+            <div id="searchm-panel" class="info-panel">
+                <p>Сообщения пользователя по количеству<br/>Пример [.]searchm id аккаунта количество сообщений<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">search</p>
+                <button class="toggle-btn" onclick="togglePanel('search-panel')">Подробнее</button>
+            </div>
+            <div id="search-panel" class="info-panel">
+                <p>Найти сообщение по id<br/>Пример [.]search id сообщения<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">prem</p>
+                <button class="toggle-btn" onclick="togglePanel('prem-panel')">Подробнее</button>
+            </div>
+            <div id="prem-panel" class="info-panel">
+                <p>Отправить рандомный премиум стикер даже если у вас нет премиума<br/>Пример [.]prem<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">cdall</p>
+                <button class="toggle-btn" onclick="togglePanel('cdall-panel')">Подробнее</button>
+            </div>
+            <div id="cdall-panel" class="info-panel">
+                <p>Файл с сообщениями по вашему количеству<br/>Пример [.]cdall количество<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">dump</p>
+                <button class="toggle-btn" onclick="togglePanel('dump-panel')">Подробнее</button>
+            </div>
+            <div id="dump-panel" class="info-panel">
+                <p>Файл с участниками чата<br/>Пример [.]dump<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">fw</p>
+                <button class="toggle-btn" onclick="togglePanel('fw-panel')">Подробнее</button>
+            </div>
+            <div id="fw-panel" class="info-panel">
+                <p>Фейк действие<br/>Для информации введите [.]fw или [.]fw 1 1с<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">canceled</p>
+                <button class="toggle-btn" onclick="togglePanel('canceled-panel')">Подробнее</button>
+            </div>
+            <div id="canceled-panel" class="info-panel">
+                <p>Отменить фейк действия<br/>Пример [.]canceled<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">readqr</p>
+                <button class="toggle-btn" onclick="togglePanel('readqr-panel')">Подробнее</button>
+            </div>
+            <div id="readqr-panel" class="info-panel">
+                <p>Сканировать QRcode<br/>Пример [.]readqr (с ответом на изображение)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">vkm</p>
+                <button class="toggle-btn" onclick="togglePanel('vkm-panel')">Подробнее</button>
+            </div>
+            <div id="vkm-panel" class="info-panel">
+                <p>Отправить музыку<br/>Пример [.]vkm название песни<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">quot</p>
+                <button class="toggle-btn" onclick="togglePanel('quot-panel')">Подробнее</button>
+            </div>
+            <div id="quot-panel" class="info-panel">
+                <p>Анимированая тянка и ваш текст<br/>Пример [.]quot (не большой текст)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">infoa</p>
+                <button class="toggle-btn" onclick="togglePanel('infoa-panel')">Подробнее</button>
+            </div>
+            <div id="infoa-panel" class="info-panel">
+                <p>Информация об автоответчике<br/>Пример [.]infoa<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">.*</p>
+                <button class="toggle-btn" onclick="togglePanel('.*-panel')">Подробнее</button>
+            </div>
+            <div id=".*-panel" class="info-panel">
+                <p>Умножить текст<br/>Пример .* текст * количество</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">random</p>
+                <button class="toggle-btn" onclick="togglePanel('random-panel')">Подробнее</button>
+            </div>
+            <div id="random-panel" class="info-panel">
+                <p>Рандом число<br/>Пример [.]random или [.]random 10 20 (от 10 до 20)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">gif</p>
+                <button class="toggle-btn" onclick="togglePanel('gif-panel')">Подробнее</button>
+            </div>
+            <div id="gif-panel" class="info-panel">
+                <p>Рандомная гифка<br/>Пример [.]gif<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">song</p>
+                <button class="toggle-btn" onclick="togglePanel('song-panel')">Подробнее</button>
+            </div>
+            <div id="song-panel" class="info-panel">
+                <p>Текст песни<br/>Пример [.]song песня<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">fay</p>
+                <button class="toggle-btn" onclick="togglePanel('fay-panel')">Подробнее</button>
+            </div>
+            <div id="fay-panel" class="info-panel">
+                <p>Фейк удаленное сообщение<br/>Пример [.]fay (с ответом) (1 ваше сообщение) (любой текст)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">tegs</p>
+                <button class="toggle-btn" onclick="togglePanel('tegs-panel')">Подробнее</button>
+            </div>
+            <div id="tegs-panel" class="info-panel">
+                <p>Упоминание участников чата с текстом<br/>Пример [.]tegs текст<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">all</p>
+                <button class="toggle-btn" onclick="togglePanel('all-panel')">Подробнее</button>
+            </div>
+            <div id="all-panel" class="info-panel">
+                <p>Упоминание участников чата<br/>Пример [.]all<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">chat</p>
+                <button class="toggle-btn" onclick="togglePanel('chat-panel')">Подробнее</button>
+            </div>
+            <div id="chat-panel" class="info-panel">
+                <p>Информация о чате<br/>Пример [.]chat<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">addauto</p>
+                <button class="toggle-btn" onclick="togglePanel('addauto-panel')">Подробнее</button>
+            </div>
+            <div id="addauto-panel" class="info-panel">
+                <p>Добавить автоответчик<br/>.addauto "триггер" "ответ" "chat_id", chat_id = (id - id чата), (chat - только в чатах), (me - только в лс), (None - везде)</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">dellallauto</p>
+                <button class="toggle-btn" onclick="togglePanel('dellallauto-panel')">Подробнее</button>
+            </div>
+            <div id="dellallauto-panel" class="info-panel">
+                <p>Удалить все автоответы<br/>Пример [.]dellallauto<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">dellauto</p>
+                <button class="toggle-btn" onclick="togglePanel('dellauto-panel')">Подробнее</button>
+            </div>
+            <div id="dellauto-panel" class="info-panel">
+                <p>Удалить конкретный автоответ<br/>Пример .dellauto "триггер" "ответ" "chat_id"</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">udl</p>
+                <button class="toggle-btn" onclick="togglePanel('udl-panel')">Подробнее</button>
+            </div>
+            <div id="udl-panel" class="info-panel">
+                <p>Удалить количество сообщений человека<br/>Пример [.]udl количество id<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">dl</p>
+                <button class="toggle-btn" onclick="togglePanel('dl-panel')">Подробнее</button>
+            </div>
+            <div id="dl-panel" class="info-panel">
+                <p>Удалить количество ваших сообщений<br/>Пример [.]dl количество<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">d</p>
+                <button class="toggle-btn" onclick="togglePanel('d-panel')">Подробнее</button>
+            </div>
+            <div id="d-panel" class="info-panel">
+                <p>Удалить количество сообщений<br/>Пример [.]d количество<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">file</p>
+                <button class="toggle-btn" onclick="togglePanel('file-panel')">Подробнее</button>
+            </div>
+            <div id="file-panel" class="info-panel">
+                <p>Получить id файла и его тип<br/>Пример [.]file (с ответом на любой файл кроме сообщения)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">tsend</p>
+                <button class="toggle-btn" onclick="togglePanel('tsend-panel')">Подробнее</button>
+            </div>
+            <div id="tsend-panel" class="info-panel">
+                <p>Отправить файл по id<br/>Пример [.]tsend тип file_id<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">spam</p>
+                <button class="toggle-btn" onclick="togglePanel('spam-panel')">Подробнее</button>
+            </div>
+            <div id="spam-panel" class="info-panel">
+                <p>Спам по file_id/текст<br/>Пример [.]spam количество тип file_id<br/>(можно так .spam 10 text привет)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">spamreaction</p>
+                <button class="toggle-btn" onclick="togglePanel('spamreaction-panel')">Подробнее</button>
+            </div>
+            <div id="spamreaction-panel" class="info-panel">
+                <p>Спам реакциями<br/>Пример [.]spamreaction количество реакция эмодзи<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">mspam</p>
+                <button class="toggle-btn" onclick="togglePanel('mspam-panel')">Подробнее</button>
+            </div>
+            <div id="mspam-panel" class="info-panel">
+                <p>Спам текстом<br/>Пример [.]mspam количество текст<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">voice</p>
+                <button class="toggle-btn" onclick="togglePanel('voice-panel')">Подробнее</button>
+            </div>
+            <div id="voice-panel" class="info-panel">
+                <p>Из текста в гс<br/>Пример [.]voice текст<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">wiki</p>
+                <button class="toggle-btn" onclick="togglePanel('wiki-panel')">Подробнее</button>
+            </div>
+            <div id="wiki-panel" class="info-panel">
+                <p>Поиск информации в вики<br/>Пример [.]wiki (ru/eng) текст<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">лето</p>
+                <button class="toggle-btn" onclick="togglePanel('лето-panel')">Подробнее</button>
+            </div>
+            <div id="лето-panel" class="info-panel">
+                <p>Сколько до лета<br/>Пример [.]лето<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">нг</p>
+                <button class="toggle-btn" onclick="togglePanel('нг-panel')">Подробнее</button>
+            </div>
+            <div id="нг-panel" class="info-panel">
+                <p>Сколько до нового года<br/>Пример [.]нг<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">generate</p>
+                <button class="toggle-btn" onclick="togglePanel('generate-panel')">Подробнее</button>
+            </div>
+            <div id="generate-panel" class="info-panel">
+                <p>Генерация пароля<br/>Пример [.]generate количество символов<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">data</p>
+                <button class="toggle-btn" onclick="togglePanel('data-panel')">Подробнее</button>
+            </div>
+            <div id="data-panel" class="info-panel">
+                <p>Фейк Информация<br/>Пример [.]data<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">calc</p>
+                <button class="toggle-btn" onclick="togglePanel('calc-panel')">Подробнее</button>
+            </div>
+            <div id="calc-panel" class="info-panel">
+                <p>Калькулятор<br/>Пример [.]calc (число) (знак) (число)<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">курс</p>
+                <button class="toggle-btn" onclick="togglePanel('курс-panel')">Подробнее</button>
+            </div>
+            <div id="курс-panel" class="info-panel">
+                <p>Курс валют<br/>Пример [.]курс USDT RUB<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">погода</p>
+                <button class="toggle-btn" onclick="togglePanel('погода-panel')">Подробнее</button>
+            </div>
+            <div id="погода-panel" class="info-panel">
+                <p>Погода<br/>Пример [.]погода город<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">revers</p>
+                <button class="toggle-btn" onclick="togglePanel('revers-panel')">Подробнее</button>
+            </div>
+            <div id="revers-panel" class="info-panel">
+                <p>Развернуть текст<br/>Пример [.]revers текст/ответ на сообщение<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">members</p>
+                <button class="toggle-btn" onclick="togglePanel('members-panel')">Подробнее</button>
+            </div>
+            <div id="members-panel" class="info-panel">
+                <p>Информация о человеке<br/>Пример [.]members ответ на сообщение<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">shorten</p>
+                <button class="toggle-btn" onclick="togglePanel('shorten-panel')">Подробнее</button>
+            </div>
+            <div id="shorten-panel" class="info-panel">
+                <p>Сократить ссылку<br/>Пример [.]shorten ссылка<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">время</p>
+                <button class="toggle-btn" onclick="togglePanel('время-panel')">Подробнее</button>
+            </div>
+            <div id="время-panel" class="info-panel">
+                <p>Текущее время по мск в течении 10 секунд<br/>Пример [.]время<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">fake</p>
+                <button class="toggle-btn" onclick="togglePanel('fake-panel')">Подробнее</button>
+            </div>
+            <div id="fake-panel" class="info-panel">
+                <p>Фейк контакт<br/>Пример .fake "номер" "Имя" "Фамилия"</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">fakee</p>
+                <button class="toggle-btn" onclick="togglePanel('fakee-panel')">Подробнее</button>
+            </div>
+            <div id="fakee-panel" class="info-panel">
+                <p>Фейк контакт V2<br/>Пример (с ответом на сообщение) [.]fakee номер<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">locate_biom</p>
+                <button class="toggle-btn" onclick="togglePanel('locate_biom-panel')">Подробнее</button>
+            </div>
+            <div id="locate_biom-panel" class="info-panel">
+                <p>Координаты адреса<br/>Пример[.]locate_biom адрес<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">locate</p>
+                <button class="toggle-btn" onclick="togglePanel('locate-panel')">Подробнее</button>
+            </div>
+            <div id="locate-panel" class="info-panel">
+                <p>Отправить гео по Координатам<br/>Пример[.]locate широта долгота<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">huy</p>
+                <button class="toggle-btn" onclick="togglePanel('huy-panel')">Подробнее</button>
+            </div>
+            <div id="huy-panel" class="info-panel">
+                <p>Анимация письки<br/>Пример[.]huy<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">амогус</p>
+                <button class="toggle-btn" onclick="togglePanel('амогус-panel')">Подробнее</button>
+            </div>
+            <div id="амогус-panel" class="info-panel">
+                <p>Анимация амогус<br/>Пример[.]амогус<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">ghoul</p>
+                <button class="toggle-btn" onclick="togglePanel('ghoul-panel')">Подробнее</button>
+            </div>
+            <div id="ghoul-panel" class="info-panel">
+                <p>1000-7<br/>Пример [.]ghoul<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">time</p>
+                <button class="toggle-btn" onclick="togglePanel('time-panel')">Подробнее</button>
+            </div>
+            <div id="time-panel" class="info-panel">
+                <p>Таймер<br/>Пример [.]time количество секунд<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">id</p>
+                <button class="toggle-btn" onclick="togglePanel('id-panel')">Подробнее</button>
+            </div>
+            <div id="id-panel" class="info-panel">
+                <p>Id чата/человека<br/>Пример [.]id или [.]id + ответ<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">onauto</p>
+                <button class="toggle-btn" onclick="togglePanel('onauto-panel')">Подробнее</button>
+            </div>
+            <div id="onauto-panel" class="info-panel">
+                <p>Включить автоответчик<br/>Пример [.]onauto<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">offauto</p>
+                <button class="toggle-btn" onclick="togglePanel('offauto-panel')">Подробнее</button>
+            </div>
+            <div id="offauto-panel" class="info-panel">
+                <p>Выключить автоответчик<br/>Пример [.]offauto<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">infoauto</p>
+                <button class="toggle-btn" onclick="togglePanel('infoauto-panel')">Подробнее</button>
+            </div>
+            <div id="infoauto-panel" class="info-panel">
+                <p>Информация об автоответчике<br/>Пример [.]infoauto<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">remindme</p>
+                <button class="toggle-btn" onclick="togglePanel('remindme-panel')">Подробнее</button>
+            </div>
+            <div id="remindme-panel" class="info-panel">
+                <p>Создать напоминание<br/>Пример [.]remindme время сообщение<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+
+        <!-- Блок команды /help -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">setpx</p>
+                <button class="toggle-btn" onclick="togglePanel('setpx-panel')">Подробнее</button>
+            </div>
+            <div id="setpx-panel" class="info-panel">
+                <p>Сменить префикс<br/>Пример [.]setpx префикс<br/>где [.] ваш префикс</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
