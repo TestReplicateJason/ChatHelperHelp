@@ -21,6 +21,61 @@
             </div>
         </div>
 
+        <!-- Блок команды .stats -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">Чекнуть удаленки</p>
+                <button class="toggle-btn" onclick="togglePanel('chekdelete-panel')">Подробнее</button>
+            </div>
+            <div id="chekdelete-panel" class="info-panel">
+                <p>Отслеживание чата<br/>Пишите где угодно @тег вашего бота ShowWords (id чата/если лс то пишите _)</br>Пример, @teg ShowWords -228228228</p>
+            </div>
+        </div>
+
+        <!-- Блок команды .stats -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">chapprove</p>
+                <button class="toggle-btn" onclick="togglePanel('chapprove-panel')">Подробнее</button>
+            </div>
+            <div id="chapprove-panel" class="info-panel">
+                <p>Отслеживание чата<br/>Примиер [.]chapprove в чате где начать отслеживание (если лс то только 1 будет работать)</p>
+            </div>
+        </div>
+        
+        <!-- Блок команды .stats -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">dellapprove</p>
+                <button class="toggle-btn" onclick="togglePanel('dellapprove-panel')">Подробнее</button>
+            </div>
+            <div id="dellapprove-panel" class="info-panel">
+                <p>Удалить отслеживание чата<br/>Примиер [.]dellapprove в чате где удалить отслеживание</p>
+            </div>
+        </div>
+
+        <!-- Блок команды .stats -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">stats</p>
+                <button class="toggle-btn" onclick="togglePanel('statsmsg-panel')">Подробнее</button>
+            </div>
+            <div id="statsmsg-panel" class="info-panel">
+                <p>Узнать о сообщении до его редактирования<br/>Примиер [.]stats с ответом на отредактированное сообщение, где [.] ваш префикс (работает только где включенно отслеживание)</p>
+            </div>
+        </div>
+
+        <!-- Блок команды .secret -->
+        <div class="command-block">
+            <div class="command-header">
+                <p class="command">secret</p>
+                <button class="toggle-btn" onclick="togglePanel('secret-panel')">Подробнее</button>
+            </div>
+            <div id="secret-panel" class="info-panel">
+                <p>Секретное сообщение<br/>Примиер [.]secret (id человека) сообщение, где [.] ваш префикс</p>
+            </div>
+        </div>
+
         <!-- Блок команды .type -->
         <div class="command-block">
             <div class="command-header">
@@ -28,7 +83,7 @@
                 <button class="toggle-btn" onclick="togglePanel('type-panel')">Подробнее</button>
             </div>
             <div id="type-panel" class="info-panel">
-                <p>Пишет красивым текстом текст <br/>Примиер [.]type текст, где [.] ваш префикс</p>
+                <p>Пишет красивым текстом текст <br/>Пример [.]type текст, где [.] ваш префикс</p>
             </div>
         </div>
 
